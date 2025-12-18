@@ -1,0 +1,126 @@
+/* Reset básico y tipografía */
+:root{
+  --primary: #2b8a3e; /* verde principal */
+  --accent: #ff8a3d;  /* naranja de acento */
+  --muted: #556055;   /* gris verdoso para textos secundarios */
+  --bg: #d0eec8;      /* fondo muy claro verdoso */
+  --card: #ffffff;
+  --container-width:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#111;background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container-width);margin:0 auto;padding:1rem}
+
+/* Header */
+#motto {color: var(--primary); margin-left: 1rem; font-weight: 500;}
+.site-header{background:#fff;border-bottom:1px solid #eee}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{margin:0;font-size:1.25rem}
+.logo a{color:inherit;text-decoration:none}
+.main-nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
+.main-nav a.active{color:var(--primary);font-weight:600}
+
+/* Sección principal y Banner */
+.hero{display:flex;justify-content:space-between;align-items:center;padding:1rem;background:linear-gradient(90deg,#fff 60%,var(--bg));border-radius:8px;margin:1rem 0;position:relative;overflow:hidden}
+.hero-content h2{margin:0 0 .25rem}
+.hero-banner{position:absolute;right:4%;top:12%;transform:rotate(-6deg);background:var(--accent);color:#fff;padding:.5rem 2rem;border-radius:40px;font-weight: 800;animation:banner 8s ease-in-out infinite}
+@keyframes banner{
+  0%{transform:translateX(-20%) rotate(-6deg);opacity:0}
+  10%{transform:translateX(0) rotate(-6deg);opacity:1}
+  60%{transform:translateX(0) scale(1);opacity:1}
+  80%{transform:translateX(0) scale(1.02);opacity:1}
+  100%{transform:translateX(20%) rotate(-6deg);opacity:0}
+}
+
+/* Tarjetas de productos */
+.grid{display:grid;gap:1rem}
+.cards{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.thumb{height:120px;display:flex;align-items:center;justify-content:center}
+.product-img{width:100%;height:100%;max-width:120px}
+.card-body h4{margin:.5rem 0}
+.muted{color:var(--muted);font-size:.95rem}
+.price{font-weight:700;margin:.5rem 0}
+.btn{display:inline-block;padding:.45rem .75rem;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none}
+.btn.ghost{background:#fff;border:1px solid rgba(43,138,62,0.12);color:var(--primary)}
+
+/* Categorías */
+.categories-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.category{background:var(--card);padding:1rem;border-radius:8px}
+
+/* Categoría en línea con scroll horizantal de productos */
+.category-row{margin:1rem 0}
+.category-row h4{margin:0 0 .5rem;padding-left:.25rem}
+.scroll-container{display:flex;gap:1rem;overflow-x:auto;padding:1rem;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.6),rgba(255,255,255,0.4));scroll-snap-type:x mandatory}
+.scroll-container::-webkit-scrollbar{height:10px}
+.scroll-container::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12);border-radius:8px}
+.item-card{flex:0 0 160px;background:var(--card);border-radius:8px;padding:.5rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;box-shadow:0 1px 6px rgba(0,0,0,0.04);scroll-snap-align:center}
+.item-card img{width:100%;height:110px;object-fit:contain;border-radius:6px}
+.item-info{width:100%;display:flex;justify-content:space-between;padding:0 .25rem;font-size:.95rem}
+.item-card strong{font-weight:600}
+
+/* Área de scroll accesible */
+.scroll-container{ -webkit-overflow-scrolling:touch }
+
+/* Detalle del producto */
+.product-page .product-detail{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin:1rem 0}
+.product-large{width:100%;max-width:320px;border-radius:12px}
+.info h2{margin-top:0}
+.rating .stars{color:var(--accent)}
+.extra{display:none;color:var(--muted);margin-top:.5rem}
+.promo{margin:.5rem 0;color:var(--accent);font-weight:700}
+
+/* Logo en header */
+.site-logo{height: 100px;object-fit:contain}
+
+/* Agrandar imagen del producto */
+.card.highlight .thumb{height:220px}
+.card.highlight .product-img{max-width:240px;height:auto}
+.featured-img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+
+/* Línea apaisada */
+.featured-row{display:flex;gap:1rem;align-items:stretch;flex-wrap:nowrap}
+.featured-row .card{flex:1 1 48%;min-width:280px}
+.featured-side{flex:0 0 300px;background:var(--card);padding:1rem;border-radius:10px;display:flex;flex-direction:column;justify-content:center}
+
+/* Sección de la compañia y Responsive */
+.company{background:transparent;padding:1rem 0;margin:1rem 0}
+.company-inner{display:flex;gap:1.25rem;align-items:center}
+.company-text{flex:1}
+.company-media{flex:0 0 360px}
+.company-img{width:100%;height:auto;border-radius:10px}
+
+@media (max-width:1000px){
+  .featured-row{flex-wrap:wrap}
+  .featured-row .card{flex:1 1 100%}
+  .featured-side{flex:1 1 100%}
+  .company-inner{flex-direction:column}
+  .company-media{width:100%;max-width:520px}
+}
+
+.site-footer{padding:1.5rem 0;color:var(--muted);font-size:.95rem;background:#fff;border-top:1px solid #eee}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+.footer-grid h4{margin:0 0 .35rem;color:var(--primary)}
+.footer-grid p{margin:0;font-size:.95rem}
+.footer-grid a{color:var(--primary);text-decoration:none}
+.footer-grid .social-links{display:flex;gap:.5rem;align-items:center}
+.footer-grid .social img{display:block}
+.footer-copy{opacity:.9}
+
+@media (max-width:900px){
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-copy{grid-column:1}
+}
+
+@media (max-width:800px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .product-page .product-detail{grid-template-columns:1fr}
+}
+
+/* Utilidad */
+.muted small{color:#999}

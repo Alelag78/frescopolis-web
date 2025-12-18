@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Manzana Roja — Supermarket</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/frescopolis.png" class="site-logo" alt="Supermarket logo"></a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container product-page">
+    <article class="product-detail">
+      <div class="media">
+        <img src="images/manzana.jpg" class="product-large" alt="Manzana roja grande">
+      </div>
+      <div class="info">
+        <h2>Manzana Roja</h2>
+        <p class="muted">Frutas • Origen: España</p>
+        <p class="rating" data-rating="4.5">Valoración: <span class="stars">★★★★☆</span> <small>(120 opiniones)</small></p>
+        <p class="price" id="price-manzana" data-base="0.99">€0.99</p>
+        <p class="availability">Disponibilidad: <strong>En stock</strong></p>
+
+        <div class="promo" id="promo-manzana" aria-live="polite"></div>
+
+        <p class="description">Manzanas rojas frescas, crujientes y jugosas. Perfectas para consumir como snack o en recetas.</p>
+        <p class="extra" id="extra-manzana">Cosechadas en la temporada pasada con cuidado y empaquetadas localmente para preservar su frescura.</p>
+
+        <p class="actions">
+          <button class="btn" onclick="toggleExtra('extra-manzana')">Más información</button>
+          <button class="btn ghost" onclick="applyPromo('manzana',10)">Aplicar oferta 10%</button>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h4>Quiénes somos</h4>
+        <p>Frescópolis es tu tienda de confianza con productos frescos y precios justos.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:info@frescopolis.local">info@frescopolis.local</a></p>
+        <p>Teléfono: <a href="tel:+34123456789">+34 123 456 789</a></p>
+      </div>
+
+      <div class="footer-address">
+        <h4>Dirección</h4>
+        <p>C/ Mercado 12, 28000 Madrid, España</p>
+      </div>
+
+      <div class="footer-hours">
+        <h4>Horario</h4>
+        <p>Lun - Vie: 09:00 - 21:00<br> Sáb: 09:00 - 20:00 · Dom: 10:00 - 14:00</p>
+      </div>
+
+      <div class="footer-legal">
+        <h4>Aviso legal</h4>
+        <p><a href="#">Política de privacidad</a><br><a href="#">Términos y condiciones</a></p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <p class="social-links">
+          <a href="#" aria-label="Facebook" class="social">Facebook</a>
+          <a href="#" aria-label="Instagram" class="social">Instagram</a>
+          <a href="#" aria-label="X" class="social">X</a>
+        </p>
+      </div>
+
+      <div class="footer-copy" style="grid-column:1/-1;text-align:center;margin-top:.5rem;color:var(--muted)">
+        <small>© 2025 Frescópolis</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
